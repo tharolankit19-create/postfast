@@ -29,6 +29,14 @@ This repository identifies itself as AGPL-3.0. Commercial use is possible, but d
 9. Add confirmation for consequential actions; never introduce scripted website automation as a substitute for platform-authorized integrations.
 10. Keep keyboard access, focus states and reduced-motion preferences.
 
+## Homepage implementation
+- Public root route: `apps/frontend/src/app/(app)/page.tsx`.
+- Responsive styling and dashboard preview: `apps/frontend/src/app/(app)/home.module.scss`.
+- Conversion narrative: founder pain → connected workflow → feature benefits → autonomy controls → signup CTA.
+- Interactive workflow tabs and light/dark dashboard preview switch are included; all metrics shown are product UI examples, not customer claims.
+- No fabricated customer logos, testimonials, user counts, revenue results, or pricing tiers are presented as facts.
+- CTA points to the existing `/auth` registration route; no new billing or AI backend behavior is claimed by the marketing page.
+
 ## Implementation plan
 ### Phase 1 — design foundation
 - Add semantic light/dark tokens without deleting legacy provider-specific styles.
