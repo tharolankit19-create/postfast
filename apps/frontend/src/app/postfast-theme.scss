@@ -1,0 +1,117 @@
+/* PostFast visual system
+ * Direction: bright, restrained, macOS-inspired utility UI.
+ * Palette rule: neutral surfaces + one violet accent; semantic colors are reserved for status.
+ * Imported after colors.scss so these variables override the legacy palette without deleting
+ * provider-specific styles or changing the existing light/dark mode mechanism.
+ */
+:root {
+  .light {
+    color-scheme: light;
+    --new-back-drop: #ffffff;
+    --new-settings: #f7f7f9;
+    --new-border: #e7e7ec;
+    --new-bgColor: #f7f7f9;
+    --new-bgColorInner: #ffffff;
+    --new-sep: #e5e5eb;
+    --new-bgLineColor: #ededf1;
+    --new-textItemFocused: #24232b;
+    --new-textItemBlur: #777681;
+    --new-boxFocused: #f0edff;
+    --new-textColor: 35 34 43;
+    --new-blockSeparator: #f1f1f4;
+    --new-btn-simple: #f1f1f5;
+    --new-btn-text: #24232b;
+    --new-btn-primary: #6d4aff;
+    --new-ai-btn: #6d4aff;
+    --new-box-hover: #f7f6fb;
+    --new-table-border: #e8e8ee;
+    --new-table-header: #fafafd;
+    --new-table-text: #777681;
+    --new-table-text-focused: #6d4aff;
+    --new-small-strips: #f5f5f8;
+    --new-big-strips: #f1f1f5;
+    --new-col-color: #f3f3f7;
+    --new-menu-dots: #777681;
+    --new-menu-hover: #24232b;
+    --menu-shadow: 0 12px 36px rgba(28, 26, 44, 0.08);
+    --popup-color: rgba(35, 34, 43, 0.08);
+    --border-preview: #e7e7ec;
+    --preview-box-shadow: 0 12px 36px rgba(28, 26, 44, 0.08);
+    --color-primary: #f7f7f9;
+    --color-secondary: #ffffff;
+    --color-text: #24232b;
+    --color-third: #ffffff;
+    --color-forth: #6d4aff;
+    --color-seventh: #6d4aff;
+    --color-gray: #777681;
+    --color-table-border: #e8e8ee;
+    --color-input: #fafafd;
+    --color-input-text: #777681;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --new-back-drop: #17171b;
+    --new-settings: #232329;
+    --new-border: #34343d;
+    --new-bgColor: #17171b;
+    --new-bgColorInner: #202027;
+    --new-sep: #34343d;
+    --new-bgLineColor: #2c2c34;
+    --new-textItemFocused: #f6f5fa;
+    --new-textItemBlur: #aaa9b5;
+    --new-boxFocused: #30284e;
+    --new-textColor: 246 245 250;
+    --new-blockSeparator: #292930;
+    --new-btn-simple: #2b2b33;
+    --new-btn-text: #f6f5fa;
+    --new-btn-primary: #8b75ff;
+    --new-ai-btn: #8b75ff;
+    --new-box-hover: #292832;
+    --new-table-border: #34343d;
+    --new-table-header: #24242b;
+    --new-table-text: #aaa9b5;
+    --new-table-text-focused: #b6a8ff;
+    --new-small-strips: #24242b;
+    --new-big-strips: #202027;
+    --new-col-color: #2b2b33;
+    --new-menu-dots: #aaa9b5;
+    --new-menu-hover: #ffffff;
+    --menu-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+    --popup-color: rgba(255, 255, 255, 0.08);
+    --border-preview: #34343d;
+    --preview-box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
+    --color-primary: #17171b;
+    --color-secondary: #202027;
+    --color-text: #f6f5fa;
+    --color-third: #202027;
+    --color-forth: #8b75ff;
+    --color-seventh: #a08dff;
+    --color-gray: #aaa9b5;
+    --color-table-border: #34343d;
+    --color-input: #24242b;
+    --color-input-text: #aaa9b5;
+  }
+}
+
+/* Quiet surfaces and restrained motion; avoid glows, gradients and oversized radii. */
+:root .light body,
+:root .dark body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root .light button,
+:root .dark button {
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root .light *,
+  :root .dark * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
